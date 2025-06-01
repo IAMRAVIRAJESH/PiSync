@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "32dbf3a6-e98f-44be-a935-5eea0744da5c",
+		"name": "PiSync",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26988681"
+	},
+	"item": [
+		{
+			"name": "Sync Events",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"device_id\": \"PIBOOK-001-A7B9C\", \r\n    \"timestamp\": \"2025-06-01 10:30:00+05:30\", \r\n    \"total_files_synced\": \"43\", \r\n    \"total_errors\": \"2\", \r\n    \"internet_speed\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/piSync/sync-event",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"piSync",
+						"sync-event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get device history",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/piSync/device/89b9be62-fa13-4ad0-9aa0-636173af74d9/sync-history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"piSync",
+						"device",
+						"89b9be62-fa13-4ad0-9aa0-636173af74d9",
+						"sync-history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "repeated failures",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/piSync/devices/repeated-failures",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"piSync",
+						"devices",
+						"repeated-failures"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
