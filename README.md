@@ -45,7 +45,7 @@ BASE_URL = http://localhost:3000/api/piSync
 - For testing the APIs you can use the postman collection I have added to this project with filename PiSync
 
 
-- Scaling to 100k Devices
+# Scaling to 100k Devices
 
 ## Current Architecture Overview
 
