@@ -29,6 +29,7 @@ A Node.js service for syncing devices when online.
 
 4. Start the server and sync database - "npm run dev". This command will run the server and synchronize the database with models, associations, relations and anything that is described in the model files.
 
+5. Use the query.sql file inside query folder of src and run on pgAdmin so it will create few entries for testing and then change the ids in the postman request according to your id in the db for hitiing APIs.
 
 ## API Endpoints
 
