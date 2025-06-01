@@ -16,13 +16,11 @@ class PiSyncController {
         internet_speed,
       } = req.body;
 
-      // Determine sync status based on errors
       let sync_status = 'success';
       if (total_errors > 0) {
         sync_status = total_files_synced > 0 ? 'partial' : 'failed';
       }
 
-      // Find or create device
       const [device, created] = await Device.findOrCreate({
         where: { device_id },
         defaults: {
@@ -36,7 +34,6 @@ class PiSyncController {
       });
 
       if (!created) {
-        // Update device statistics
         const updateData = {
           last_seen: timestamp,
           total_sync_attempts: device.total_sync_attempts + 1,
@@ -51,10 +48,9 @@ class PiSyncController {
         await device.update(updateData, { transaction });
       }
 
-      // Create sync event
       const syncEvent = await SyncEvent.create(
         {
-          device_id: device.id, // Use the device's ID
+          device_id: device.id,
           timestamp: new Date(timestamp),
           total_files_synced,
           total_errors,

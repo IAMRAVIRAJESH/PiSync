@@ -50,7 +50,7 @@ const SyncEvent = sequelize.define(
       defaultValue: 'success',
     },
     sync_duration: {
-      type: DataTypes.INTEGER, // in seconds
+      type: DataTypes.INTEGER,
       allowNull: true,
     },
     error_details: {

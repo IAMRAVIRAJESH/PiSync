@@ -3,6 +3,7 @@
 A Node.js service for syncing devices when online.
 
 ## Features included
+
 - Middlewares to check authenticity of incoming API requets
 - APIs to handle incoming events
 - Rate limiting to control API usage abuse
@@ -19,7 +20,7 @@ A Node.js service for syncing devices when online.
 - Node.js 18 or higher
 - PostgreSQL
 
-### Installation
+### Inital Setup
 
 1. Clone the repository - git clone https://github.com/IAMRAVIRAJESH/PiSync.git and move to main directory using the command "cd PISYNC".
 
@@ -31,6 +32,8 @@ A Node.js service for syncing devices when online.
 
 5. Use the query.sql file inside query folder of src and run on pgAdmin so it will create few entries for testing and then change the ids in the postman request according to your id in the db for hitiing APIs.
 
+6. For knowledge I have created necessary tables with proper columns and associations between them, you can check the models folder for the same.
+
 ## API Endpoints
 
 BASE_URL = http://localhost:3000/api/piSync
@@ -39,11 +42,9 @@ BASE_URL = http://localhost:3000/api/piSync
 - GET BASE_URL/device/:id/sync-history → to view sync logs of a device.
 - GET BASE_URL/devices/repeated-failures → to list devices with more than 3 failed syncs.
 
-
 # API testing
 
 - For testing the APIs you can use the postman collection I have added to this project with filename PiSync
-
 
 # Scaling to 100k Devices
 
@@ -75,7 +76,7 @@ The PiSync backend is designed as a lightweight, efficient service for handling 
 
 # Caching Strategy
 
-- We can use caching techinques like LRU, LFU using redis for efficient querying of expensive opeartions 
+- We can use caching techinques like LRU, LFU using redis for efficient querying of expensive opeartions
 
 #### Async Processing
 
@@ -100,7 +101,5 @@ The PiSync backend is designed as a lightweight, efficient service for handling 
 - **API keys**: Device-specific authentication
 - **JWT tokens**: For administrative access
 - **Role-based access**: Different permissions for different user types
-
-
 
 Apart from all the things mentioned there are still techniques to handle thes ekinds of load, like multiple AZ deployments using AWS for disaster recovery, CDN, caching, and handle traffic spikes.
