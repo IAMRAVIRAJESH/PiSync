@@ -34,6 +34,9 @@ A Node.js service for syncing devices when online.
 
 6. For knowledge I have created necessary tables with proper columns and associations between them, you can check the models folder for the same.
 
+7. If you face any difficulty in syncing the database then please changed the value of force to true on line number 6 in index.js file inside Models folder, but remember it will erase all the data from database which you are syncing.
+
+
 ## API Endpoints
 
 BASE_URL = http://localhost:3000/api/piSync
